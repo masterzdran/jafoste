@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'jafoste' ">
+        <StartAction>Project</StartAction>
+        <LaunchUrl>weatherforecast</LaunchUrl>
+        <ApplicationURL>http://localhost:5002</ApplicationURL>
+    </PropertyGroup>
+    <!-- <snippet_SuppressWarnings> -->
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+    <!-- </snippet_SuppressWarnings> -->
+    <ItemGroup>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+            <GlobalPropertiesToRemove>
+            </GlobalPropertiesToRemove>
+        </ProjectReference>
+        <ProjectReference Include="..\Models\Models.csproj">
+            <GlobalPropertiesToRemove>
+            </GlobalPropertiesToRemove>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.0.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Controllers\" />
+    </ItemGroup>
+</Project>
